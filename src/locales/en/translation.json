@@ -1,0 +1,32 @@
+{
+  "shared": {
+    "welcome": "Welcome",
+    "saving": "Saving you money, one purchase at a time",
+    "next": "Next",
+    "back": "Back",
+    "begin": "BEGIN YOUR JOURNEY",
+    "verify": "VERIFY",
+    "logout": "LOG OUT"
+  },
+  "entrance": {
+    "cta": "Begin your journey",
+    "title": "PARCUS",
+    "subtitle": "Saving you money, one purchase at a time"
+  },
+  "communityIntro": {
+    "title": "Our community",
+    "description": "Use the community discounts, promotions, gift cards directly to a redeemable credit."
+  },
+  "payLessIntro": {
+    "title": "Pay less",
+    "description": "Redeem discount at checkout using our promo code, bar-code or QR code"
+  },
+  "offersIntro": {
+    "title": "Get offers",
+    "description": "Find in-store deals near you and start saving right away!"
+  },
+  "verifyCode": {
+    "title": "Verification Code",
+    "description": "Enter the verification code we sent to\n{{phone}}"
+  }
+}
