@@ -12,7 +12,8 @@ import logger from '@buydy/se-logger';
 /**
  * Get the current user's public IP address
  */
-async function _getCurrentIP() {
+// eslint-disable-next-line no-unused-vars
+async function getCurrentIP() {
   try {
     const response = await fetch('https://api.ipify.org');
     const ip = (await response.text()).trim();
@@ -31,7 +32,8 @@ async function _getCurrentIP() {
 /**
  * Configure security measures on the droplet (IP-agnostic, key-only SSH)
  */
-async function _configureSecurity(conn) {
+// eslint-disable-next-line no-unused-vars
+async function configureSecurity(conn) {
   logger.business('Configuring security (key-only, IP-agnostic)');
 
   const commands = [

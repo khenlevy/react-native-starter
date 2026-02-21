@@ -17,14 +17,13 @@ export const getUsageStats = async (req, res, next) => {
     const CachedResponseEodhd = getModel('cached_response_eodhistoricaldata');
 
     // Parse query parameters
-    const { endpoint, since, until, jobName: _jobName } = req.query;
+    const { endpoint, since, until } = req.query;
 
     // Build filters
     const filters = {};
     if (endpoint) filters.endpoint = endpoint;
     if (since) filters.since = new Date(since);
     if (until) filters.until = new Date(until);
-    // jobName is not available in cache collection, ignore it
 
     // Get usage statistics
     const statsResult = await CachedResponseEodhd.getUsageStats(filters);
@@ -57,14 +56,13 @@ export const getEndpointStats = async (req, res, next) => {
     const CachedResponseEodhd = getModel('cached_response_eodhistoricaldata');
 
     // Parse query parameters
-    const { endpoint, since, until, jobName: _jobName } = req.query;
+    const { endpoint, since, until } = req.query;
 
     // Build filters
     const filters = {};
     if (endpoint && endpoint !== 'all') filters.endpoint = endpoint;
     if (since) filters.since = new Date(since);
     if (until) filters.until = new Date(until);
-    // jobName is not available in cache collection, ignore it
 
     // Get endpoint statistics
     const endpointStats = await CachedResponseEodhd.getEndpointStats(filters);
@@ -83,15 +81,7 @@ export const getRecentUsage = async (req, res, next) => {
     const CachedResponseEodhd = getModel('cached_response_eodhistoricaldata');
 
     // Parse query parameters
-    const {
-      limit = 100,
-      endpoint,
-      isCached: _isCached,
-      isSuccess: _isSuccess,
-      since,
-      until,
-      jobName: _jobName,
-    } = req.query;
+    const { limit = 100, endpoint, since, until } = req.query;
 
     // Build filters
     const filters = {};

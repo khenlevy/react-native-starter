@@ -215,13 +215,6 @@ export const getCycledListStatus = async (req, res, next) => {
             .find((job) => isCompletedStatus(job.status))
         : null;
 
-    const _nextJob =
-      currentJobIndex >= 0
-        ? workflowJobs
-            .slice(currentJobIndex + 1)
-            .find((job) => !isCompletedStatus(job.status))
-        : null;
-
     const currentJob =
       currentJobIndex >= 0
         ? workflowJobs[currentJobIndex]
@@ -405,9 +398,11 @@ function getTimeUntilNextCycle(nextCycleScheduled) {
 }
 
 /**
- * Get cycle progress information
+ * Get cycle progress information (reserved for future use)
+ * @param {object} status
  */
-function _getCycleProgress(status) {
+// eslint-disable-next-line no-unused-vars
+function getCycleProgress(status) {
   if (status.totalAsyncFns === 0) {
     return {
       current: 0,
