@@ -1,0 +1,28 @@
+{
+  "name": "@buydy/dv-prettier-lint",
+  "version": "1.0.0",
+  "description": "Development tools for Buydy packages",
+  "type": "module",
+  "main": "bin/dv-prettier-lint-runner.js",
+  "bin": {
+    "dv-prettier-lint-runner": "./bin/dv-prettier-lint-runner.js"
+  },
+  "scripts": {
+    "prettier-lint": "./bin/dv-prettier-lint-runner.js"
+  },
+  "keywords": [
+    "dev",
+    "tools",
+    "prettier",
+    "lint",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-react": "^7.37.5",
+    "prettier": "^3.2.5"
+  }
+}

@@ -1,0 +1,443 @@
+[
+  {
+    "id": "eod",
+    "name": "eod",
+    "displayName": "End-of-Day Data",
+    "description": "Historical end-of-day stock prices and OHLCV data",
+    "category": "market-data",
+    "path": "eod",
+    "enabled": true
+  },
+  {
+    "id": "eod-bulk-last-day",
+    "name": "eod-bulk-last-day",
+    "displayName": "Bulk End-of-Day Data",
+    "description": "Bulk end-of-day data for multiple symbols",
+    "category": "market-data",
+    "path": "eod-bulk-last-day",
+    "enabled": true
+  },
+  {
+    "id": "real-time",
+    "name": "real-time",
+    "displayName": "Real-time Data",
+    "description": "Real-time stock prices and market data",
+    "category": "market-data",
+    "path": "real-time",
+    "enabled": true
+  },
+  {
+    "id": "fundamentals",
+    "name": "fundamentals",
+    "displayName": "Fundamentals",
+    "description": "Company fundamental data including financials, ratios, and metrics",
+    "category": "fundamental-data",
+    "path": "fundamentals",
+    "enabled": true
+  },
+  {
+    "id": "technical",
+    "name": "technical",
+    "displayName": "Technical Indicators",
+    "description": "Technical analysis indicators and signals",
+    "category": "technical-analysis",
+    "path": "technical",
+    "enabled": true
+  },
+  {
+    "id": "dividends",
+    "name": "dividends",
+    "displayName": "Dividends",
+    "description": "Dividend history and upcoming dividend information",
+    "category": "corporate-actions",
+    "path": "dividends",
+    "enabled": true
+  },
+  {
+    "id": "splits",
+    "name": "splits",
+    "displayName": "Stock Splits",
+    "description": "Stock split history and upcoming split information",
+    "category": "corporate-actions",
+    "path": "splits",
+    "enabled": true
+  },
+  {
+    "id": "earnings",
+    "name": "earnings",
+    "displayName": "Earnings",
+    "description": "Earnings reports and earnings calendar",
+    "category": "corporate-actions",
+    "path": "earnings",
+    "enabled": true
+  },
+  {
+    "id": "news",
+    "name": "news",
+    "displayName": "News",
+    "description": "Financial news and market updates",
+    "category": "news-sentiment",
+    "path": "news",
+    "enabled": true
+  },
+  {
+    "id": "search",
+    "name": "search",
+    "displayName": "Search",
+    "description": "Stock search and symbol lookup",
+    "category": "reference-data",
+    "path": "search",
+    "enabled": true
+  },
+  {
+    "id": "exchanges-list",
+    "name": "exchanges-list",
+    "displayName": "Exchanges List",
+    "description": "List of available stock exchanges",
+    "category": "reference-data",
+    "path": "exchanges-list",
+    "enabled": true
+  },
+  {
+    "id": "user",
+    "name": "user",
+    "displayName": "User Info",
+    "description": "User account information and usage statistics",
+    "category": "account",
+    "path": "user",
+    "enabled": true
+  },
+  {
+    "id": "options",
+    "name": "options",
+    "displayName": "Options",
+    "description": "Options data including chains, Greeks, and volatility",
+    "category": "derivatives",
+    "path": "options",
+    "enabled": true
+  },
+  {
+    "id": "forex",
+    "name": "forex",
+    "displayName": "Forex",
+    "description": "Foreign exchange rates and currency data",
+    "category": "forex",
+    "path": "forex",
+    "enabled": true
+  },
+  {
+    "id": "indices",
+    "name": "indices",
+    "displayName": "Indices",
+    "description": "Market indices and index components",
+    "category": "market-data",
+    "path": "indices",
+    "enabled": true
+  },
+  {
+    "id": "etf",
+    "name": "etf",
+    "displayName": "ETF Data",
+    "description": "Exchange-traded fund data and holdings",
+    "category": "market-data",
+    "path": "etf",
+    "enabled": true
+  },
+  {
+    "id": "macro-indicator",
+    "name": "macro-indicator",
+    "displayName": "Macro Indicators",
+    "description": "Macroeconomic indicators and economic data",
+    "category": "economic-data",
+    "path": "macro-indicator",
+    "enabled": true
+  },
+  {
+    "id": "calendar",
+    "name": "calendar",
+    "displayName": "Economic Calendar",
+    "description": "Economic events and calendar",
+    "category": "economic-data",
+    "path": "calendar",
+    "enabled": true
+  },
+  {
+    "id": "insider-transactions",
+    "name": "insider-transactions",
+    "displayName": "Insider Transactions",
+    "description": "Insider trading transactions and filings",
+    "category": "corporate-actions",
+    "path": "insider-transactions",
+    "enabled": true
+  },
+  {
+    "id": "insider-ownership",
+    "name": "insider-ownership",
+    "displayName": "Insider Ownership",
+    "description": "Insider ownership and holdings data",
+    "category": "corporate-actions",
+    "path": "insider-ownership",
+    "enabled": true
+  },
+  {
+    "id": "insider-roster",
+    "name": "insider-roster",
+    "displayName": "Insider Roster",
+    "description": "List of company insiders and executives",
+    "category": "corporate-actions",
+    "path": "insider-roster",
+    "enabled": true
+  },
+  {
+    "id": "bulk-deals",
+    "name": "bulk-deals",
+    "displayName": "Bulk Deals",
+    "description": "Large block trades and bulk deal information",
+    "category": "trading-data",
+    "path": "bulk-deals",
+    "enabled": true
+  },
+  {
+    "id": "upcoming-earnings",
+    "name": "upcoming-earnings",
+    "displayName": "Upcoming Earnings",
+    "description": "Upcoming earnings announcements calendar",
+    "category": "corporate-actions",
+    "path": "upcoming-earnings",
+    "enabled": true
+  },
+  {
+    "id": "upcoming-ipos",
+    "name": "upcoming-ipos",
+    "displayName": "Upcoming IPOs",
+    "description": "Upcoming initial public offerings calendar",
+    "category": "corporate-actions",
+    "path": "upcoming-ipos",
+    "enabled": true
+  },
+  {
+    "id": "upcoming-splits",
+    "name": "upcoming-splits",
+    "displayName": "Upcoming Splits",
+    "description": "Upcoming stock splits calendar",
+    "category": "corporate-actions",
+    "path": "upcoming-splits",
+    "enabled": true
+  },
+  {
+    "id": "upcoming-dividends",
+    "name": "upcoming-dividends",
+    "displayName": "Upcoming Dividends",
+    "description": "Upcoming dividend payments calendar",
+    "category": "corporate-actions",
+    "path": "upcoming-dividends",
+    "enabled": true
+  },
+  {
+    "id": "screener",
+    "name": "screener",
+    "displayName": "Stock Screener",
+    "description": "Stock screening and filtering tools",
+    "category": "analysis-tools",
+    "path": "screener",
+    "enabled": true
+  },
+  {
+    "id": "trending",
+    "name": "trending",
+    "displayName": "Trending Stocks",
+    "description": "Trending and most active stocks",
+    "category": "market-data",
+    "path": "trending",
+    "enabled": true
+  },
+  {
+    "id": "market-holidays",
+    "name": "market-holidays",
+    "displayName": "Market Holidays",
+    "description": "Market holidays and trading calendar",
+    "category": "reference-data",
+    "path": "market-holidays",
+    "enabled": true
+  },
+  {
+    "id": "live-stock-prices",
+    "name": "live-stock-prices",
+    "displayName": "Live Stock Prices",
+    "description": "Live streaming stock prices",
+    "category": "market-data",
+    "path": "live-stock-prices",
+    "enabled": true
+  },
+  {
+    "id": "intraday",
+    "name": "intraday",
+    "displayName": "Intraday Data",
+    "description": "Intraday price and volume data",
+    "category": "market-data",
+    "path": "intraday",
+    "enabled": true
+  },
+  {
+    "id": "delisted-companies",
+    "name": "delisted-companies",
+    "displayName": "Delisted Companies",
+    "description": "Information about delisted companies",
+    "category": "reference-data",
+    "path": "delisted-companies",
+    "enabled": true
+  },
+  {
+    "id": "exchange-symbol-list",
+    "name": "exchange-symbol-list",
+    "displayName": "Exchange Symbols",
+    "description": "List of symbols for a specific exchange",
+    "category": "reference-data",
+    "path": "exchange-symbol-list",
+    "enabled": true
+  },
+  {
+    "id": "exchange-details",
+    "name": "exchange-details",
+    "displayName": "Exchange Details",
+    "description": "Detailed information about exchanges",
+    "category": "reference-data",
+    "path": "exchange-details",
+    "enabled": true
+  },
+  {
+    "id": "market-cap",
+    "name": "market-cap",
+    "displayName": "Market Cap",
+    "description": "Market capitalization data",
+    "category": "market-data",
+    "path": "market-cap",
+    "enabled": true
+  },
+  {
+    "id": "sector-list",
+    "name": "sector-list",
+    "displayName": "Sector List",
+    "description": "List of market sectors",
+    "category": "reference-data",
+    "path": "sector-list",
+    "enabled": true
+  },
+  {
+    "id": "industry-list",
+    "name": "industry-list",
+    "displayName": "Industry List",
+    "description": "List of industries",
+    "category": "reference-data",
+    "path": "industry-list",
+    "enabled": true
+  },
+  {
+    "id": "country-list",
+    "name": "country-list",
+    "displayName": "Country List",
+    "description": "List of countries",
+    "category": "reference-data",
+    "path": "country-list",
+    "enabled": true
+  },
+  {
+    "id": "timezone-list",
+    "name": "timezone-list",
+    "displayName": "Timezone List",
+    "description": "List of timezones",
+    "category": "reference-data",
+    "path": "timezone-list",
+    "enabled": true
+  },
+  {
+    "id": "currency-list",
+    "name": "currency-list",
+    "displayName": "Currency List",
+    "description": "List of currencies",
+    "category": "reference-data",
+    "path": "currency-list",
+    "enabled": true
+  },
+  {
+    "id": "exchange-list",
+    "name": "exchange-list",
+    "displayName": "Exchange List",
+    "description": "List of exchanges",
+    "category": "reference-data",
+    "path": "exchange-list",
+    "enabled": true
+  },
+  {
+    "id": "ticker-list",
+    "name": "ticker-list",
+    "displayName": "Ticker List",
+    "description": "List of tickers",
+    "category": "reference-data",
+    "path": "ticker-list",
+    "enabled": true
+  },
+  {
+    "id": "symbol-list",
+    "name": "symbol-list",
+    "displayName": "Symbol List",
+    "description": "List of symbols",
+    "category": "reference-data",
+    "path": "symbol-list",
+    "enabled": true
+  },
+  {
+    "id": "stock-list",
+    "name": "stock-list",
+    "displayName": "Stock List",
+    "description": "List of stocks",
+    "category": "reference-data",
+    "path": "stock-list",
+    "enabled": true
+  },
+  {
+    "id": "bond-list",
+    "name": "bond-list",
+    "displayName": "Bond List",
+    "description": "List of bonds",
+    "category": "reference-data",
+    "path": "bond-list",
+    "enabled": true
+  },
+  {
+    "id": "fund-list",
+    "name": "fund-list",
+    "displayName": "Fund List",
+    "description": "List of funds",
+    "category": "reference-data",
+    "path": "fund-list",
+    "enabled": true
+  },
+  {
+    "id": "index-list",
+    "name": "index-list",
+    "displayName": "Index List",
+    "description": "List of indices",
+    "category": "reference-data",
+    "path": "index-list",
+    "enabled": true
+  },
+  {
+    "id": "commodity-list",
+    "name": "commodity-list",
+    "displayName": "Commodity List",
+    "description": "List of commodities",
+    "category": "reference-data",
+    "path": "commodity-list",
+    "enabled": true
+  },
+  {
+    "id": "crypto-list",
+    "name": "crypto-list",
+    "displayName": "Crypto List",
+    "description": "List of cryptocurrencies",
+    "category": "reference-data",
+    "path": "crypto-list",
+    "enabled": true
+  }
+]

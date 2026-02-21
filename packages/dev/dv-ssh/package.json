@@ -1,0 +1,25 @@
+{
+  "name": "@buydy/dv-ssh",
+  "version": "1.0.0",
+  "description": "SSH connection and remote command execution utilities for Buydy",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "dev",
+    "tools",
+    "ssh",
+    "remote",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "dependencies": {
+    "node-ssh": "^13.0.0"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

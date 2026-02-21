@@ -1,0 +1,7 @@
+npm error Lifecycle script `release` failed with error:
+npm error workspace @buydy/dv-cd@1.0.0
+npm error location /Users/khenlevy/ws/private/k-repositories/Buydy/packages/dev/dv-cd
+npm error Missing script: "release"
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run --workspace=@buydy/dv-cd@1.0.0

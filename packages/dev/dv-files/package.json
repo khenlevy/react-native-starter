@@ -1,0 +1,30 @@
+{
+  "name": "@buydy/dv-files",
+  "version": "1.0.0",
+  "description": "Node.js file operations utilities for Buydy development tools - directory management, file sync, and file system operations",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src/",
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "dev",
+    "tools",
+    "files",
+    "directory",
+    "sync",
+    "nodejs",
+    "filesystem",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "dependencies": {
+    "@buydy/dv-ssh": "workspace:*"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*",
+    "eslint": "^8.55.0"
+  }
+}

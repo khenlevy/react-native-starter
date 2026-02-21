@@ -1,0 +1,25 @@
+{
+  "name": "@buydy/se-logger",
+  "version": "1.0.0",
+  "description": "High-performance structured logger for Buydy backend services",
+  "type": "module",
+  "main": "src/logger.js",
+  "exports": {
+    ".": "./src/logger.js"
+  },
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "logger",
+    "logging",
+    "performance",
+    "structured-logging",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

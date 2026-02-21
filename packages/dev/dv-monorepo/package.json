@@ -1,0 +1,22 @@
+{
+  "name": "@buydy/dv-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo utilities for Buydy development tools",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "dev",
+    "monorepo",
+    "utils",
+    "buydy",
+    "server"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

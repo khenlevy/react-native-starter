@@ -1,0 +1,25 @@
+{
+  "name": "@buydy/iso-auth-utils",
+  "version": "1.0.0",
+  "description": "Isomorphic authentication utilities for Buydy applications",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "auth",
+    "utils",
+    "isomorphic",
+    "buydy",
+    "server"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

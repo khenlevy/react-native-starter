@@ -1,0 +1,215 @@
+[
+  {
+    "id": "syncAllExchangesAndSymbols",
+    "name": "syncAllExchangesAndSymbols",
+    "displayName": "Sync All Exchanges and Symbols",
+    "description": "Weekly foundation data sync - retrieves all available exchanges and their symbols from EODHD API. This is the foundation job that all other jobs depend on.",
+    "category": "foundation",
+    "scope": "all",
+    "cronDefinition": "0 23 * * 6",
+    "cronDescription": "Every Saturday at 23:00 America/Chicago (11:00 PM CST/CDT)",
+    "timezone": "America/Chicago",
+    "dependencies": [],
+    "estimatedDuration": "15-30 minutes",
+    "priority": "critical",
+    "dataSource": "EODHD API - Exchanges and Symbols endpoints",
+    "outputCollections": ["exchanges", "exchange_symbols"],
+    "tags": ["foundation", "weekly", "exchanges", "symbols"],
+    "enabled": true,
+    "retryPolicy": {
+      "maxRetries": 3,
+      "retryDelay": "5 minutes"
+    }
+  },
+  {
+    "id": "syncFundamentalsLargeCap",
+    "name": "syncFundamentalsLargeCap",
+    "displayName": "Sync Fundamentals - Large Cap",
+    "description": "Daily fundamentals data sync for large cap stocks (≥$1B market cap). Retrieves key financial metrics including market cap, P/E ratio, revenue, etc.",
+    "category": "fundamentals",
+    "scope": "large-cap",
+    "cronDefinition": "0 0 * * *",
+    "cronDescription": "Daily at 00:00 America/Chicago (Midnight CST/CDT)",
+    "timezone": "America/Chicago",
+    "dependencies": ["syncAllExchangesAndSymbols"],
+    "estimatedDuration": "45-60 minutes",
+    "priority": "high",
+    "dataSource": "EODHD API - Fundamentals endpoint",
+    "outputCollections": ["fundamentals"],
+    "tags": ["fundamentals", "daily", "large-cap", "financial-metrics"],
+    "enabled": true,
+    "retryPolicy": {
+      "maxRetries": 3,
+      "retryDelay": "10 minutes"
+    }
+  },
+  {
+    "id": "findAndMarkLargeCapStocks",
+    "name": "findAndMarkLargeCapStocks",
+    "displayName": "Find and Mark Large Cap Stocks",
+    "description": "Identifies and marks stocks with market cap ≥$1B as large cap stocks. This job filters the universe of stocks for focused analysis.",
+    "category": "filtering",
+    "scope": "large-cap",
+    "cronDefinition": "30 1 * * *",
+    "cronDescription": "Daily at 01:30 America/Chicago (1:30 AM CST/CDT - 30 minutes after fundamentals)",
+    "timezone": "America/Chicago",
+    "dependencies": ["syncFundamentalsLargeCap"],
+    "estimatedDuration": "10-15 minutes",
+    "priority": "high",
+    "dataSource": "Fundamentals collection (market cap data)",
+    "outputCollections": ["exchange_symbols"],
+    "tags": ["filtering", "daily", "large-cap", "market-cap"],
+    "enabled": true,
+    "retryPolicy": {
+      "maxRetries": 2,
+      "retryDelay": "5 minutes"
+    }
+  },
+  {
+    "id": "syncDividendsLargeCap",
+    "name": "syncDividendsLargeCap",
+    "displayName": "Sync Dividends - Large Cap",
+    "description": "Daily dividend data sync for large cap stocks. Retrieves historical dividend payments, ex-dividend dates, and dividend yield information.",
+    "category": "dividends",
+    "scope": "large-cap",
+    "cronDefinition": "0 2 * * *",
+    "cronDescription": "Daily at 02:00 America/Chicago (2:00 AM CST/CDT - 30 minutes after large cap identification)",
+    "timezone": "America/Chicago",
+    "dependencies": ["findAndMarkLargeCapStocks"],
+    "estimatedDuration": "60-90 minutes",
+    "priority": "high",
+    "dataSource": "EODHD API - Dividends endpoint",
+    "outputCollections": ["dividends"],
+    "tags": ["dividends", "daily", "large-cap", "income"],
+    "enabled": true,
+    "retryPolicy": {
+      "maxRetries": 3,
+      "retryDelay": "15 minutes"
+    }
+  },
+  {
+    "id": "syncTechnicalsLargeCap",
+    "name": "syncTechnicalsLargeCap",
+    "displayName": "Sync Technicals - Large Cap",
+    "description": "Monthly technical indicators sync for large cap stocks. Retrieves moving averages, RSI, MACD, and other technical analysis indicators. Runs on 1st of each month.",
+    "category": "technicals",
+    "scope": "large-cap",
+    "cronDefinition": "0 1 1 * *",
+    "cronDescription": "Monthly on 1st at 01:00 America/Chicago (1:00 AM CST/CDT)",
+    "timezone": "America/Chicago",
+    "dependencies": ["findAndMarkLargeCapStocks"],
+    "estimatedDuration": "45-60 minutes",
+    "priority": "low",
+    "dataSource": "EODHD API - Technical Indicators endpoint",
+    "outputCollections": ["technicals"],
+    "tags": ["technicals", "monthly", "large-cap", "indicators"],
+    "enabled": true,
+    "runOnInitialSync": false,
+    "retryPolicy": {
+      "maxRetries": 3,
+      "retryDelay": "10 minutes"
+    }
+  },
+  {
+    "id": "syncMetricsLargeCap",
+    "name": "syncMetricsLargeCap",
+    "displayName": "Sync Metrics - Large Cap",
+    "description": "Daily calculated financial metrics for large cap stocks. Calculates dividend growth rates (3Y, 5Y, 10Y), current dividend yield, and other derived metrics.",
+    "category": "metrics",
+    "scope": "large-cap",
+    "cronDefinition": "30 3 * * *",
+    "cronDescription": "Daily at 03:30 America/Chicago (3:30 AM CST/CDT - 1.5 hours after dividends)",
+    "timezone": "America/Chicago",
+    "dependencies": ["syncDividendsLargeCap", "syncFundamentalsLargeCap"],
+    "estimatedDuration": "30-45 minutes",
+    "priority": "high",
+    "dataSource": "Dividends and Fundamentals collections (calculated metrics)",
+    "outputCollections": ["metrics"],
+    "tags": ["metrics", "daily", "large-cap", "calculated", "dividend-growth"],
+    "enabled": true,
+    "retryPolicy": {
+      "maxRetries": 2,
+      "retryDelay": "10 minutes"
+    }
+  },
+  {
+    "id": "syncMetricsValuationLargeCap",
+    "name": "Sync Valuation Metrics (Large Cap)",
+    "displayName": "Sync Valuation Metrics (Large Cap)",
+    "description": "Computes DCF-based valuation metrics for large-cap stocks using fundamentals and pricing data.",
+    "category": "metrics",
+    "scope": "large-cap",
+    "cronDefinition": "0 */6 * * *",
+    "cronDescription": "Every 6 hours at minute 0 America/Chicago",
+    "timezone": "America/Chicago",
+    "dependencies": ["syncDividendsLargeCap", "syncFundamentalsLargeCap"],
+    "estimatedDuration": "45-60 minutes",
+    "priority": "high",
+    "dataSource": "Fundamentals, Dividends, Price data",
+    "outputCollections": ["metrics"],
+    "tags": ["metrics", "valuation", "dcf", "large-cap"],
+    "enabled": true,
+    "retryPolicy": {
+      "maxRetries": 2,
+      "retryDelay": "15 minutes"
+    }
+  },
+  {
+    "id": "syncSectorPercentiles",
+    "name": "syncSectorPercentiles",
+    "displayName": "Sync Sector Percentiles",
+    "description": "Daily sector percentile calculation for large cap stocks. Calculates percentile ranks of each company's metrics relative to their sector peers. Replaces the deprecated syncMetricsPerSector job.",
+    "category": "sector-percentiles",
+    "scope": "large-cap",
+    "cronDefinition": "0 4 * * *",
+    "cronDescription": "Daily at 04:00 America/Chicago (4:00 AM CST/CDT - 30 minutes after individual metrics)",
+    "timezone": "America/Chicago",
+    "dependencies": ["syncMetricsLargeCap"],
+    "estimatedDuration": "15-25 minutes",
+    "priority": "medium",
+    "dataSource": "Metrics and Fundamentals collections (sector percentile calculation)",
+    "outputCollections": ["metrics"],
+    "tags": [
+      "sector",
+      "percentiles",
+      "daily",
+      "large-cap",
+      "ranking",
+      "sector-analysis"
+    ],
+    "enabled": true,
+    "retryPolicy": {
+      "maxRetries": 2,
+      "retryDelay": "5 minutes"
+    }
+  },
+  {
+    "id": "syncIndustryPercentiles",
+    "name": "syncIndustryPercentiles",
+    "displayName": "Sync Industry Percentiles",
+    "description": "Daily industry percentile calculation for large cap stocks. Calculates percentile ranks of each company's metrics relative to their industry peers. Replaces the deprecated syncMetricsPerIndustry job.",
+    "category": "industry-percentiles",
+    "scope": "large-cap",
+    "cronDefinition": "30 4 * * *",
+    "cronDescription": "Daily at 04:30 America/Chicago (4:30 AM CST/CDT - 30 minutes after sector percentiles)",
+    "timezone": "America/Chicago",
+    "dependencies": ["syncSectorPercentiles"],
+    "estimatedDuration": "15-25 minutes",
+    "priority": "medium",
+    "dataSource": "Metrics and Fundamentals collections (industry percentile calculation)",
+    "outputCollections": ["metrics"],
+    "tags": [
+      "industry",
+      "percentiles",
+      "daily",
+      "large-cap",
+      "ranking",
+      "industry-analysis"
+    ],
+    "enabled": true,
+    "retryPolicy": {
+      "maxRetries": 2,
+      "retryDelay": "5 minutes"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "name": "@buydy/se-db",
+  "version": "0.1.0",
+  "description": "Isolated MongoDB CRUD library for Buydy server packages. All config is injected from the top app.",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/Buydy",
+    "directory": "packages/server/se-db"
+  },
+  "dependencies": {
+    "mongodb": "^6.10.0"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

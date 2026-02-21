@@ -1,0 +1,24 @@
+{
+  "name": "@buydy/cl-buttons",
+  "version": "1.0.0",
+  "description": "Button components for Buydy client applications",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "buttons",
+    "components",
+    "client",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

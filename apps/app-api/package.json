@@ -1,0 +1,35 @@
+{
+  "name": "@buydy/app-api",
+  "version": "1.0.0",
+  "description": "Simple API backend",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "bash scripts/dev-with-tunnel.sh",
+    "start": "node src/index.js",
+    "lint": "eslint src/",
+    "prettier-lint": "dv-prettier-lint-runner",
+    "test:run-job": "node src/test-run-job.js",
+    "release": "ln -sf ../../.env.production .env && yarn workspace @buydy/dv-cd deploy release --cwd $(pwd)",
+    "release-rollback": "ln -sf ../../.env.production .env && yarn workspace @buydy/dv-cd deploy rollback --cwd $(pwd)"
+  },
+  "dependencies": {
+    "@buydy/iso-business-types": "workspace:*",
+    "@buydy/se-db": "workspace:*",
+    "@buydy/se-eodhd": "workspace:^",
+    "@buydy/se-logger": "workspace:*",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*",
+    "eslint": "^8.55.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

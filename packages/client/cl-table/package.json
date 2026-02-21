@@ -1,0 +1,27 @@
+{
+  "name": "@buydy/cl-table",
+  "version": "1.0.0",
+  "description": "Table component for Buydy web applications",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "table",
+    "components",
+    "client",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

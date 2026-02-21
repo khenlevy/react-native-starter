@@ -1,0 +1,31 @@
+{
+  "name": "@buydy/cl-slider",
+  "version": "1.0.0",
+  "description": "Slider components (single and dual-handle) for Buydy web applications",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "slider",
+    "range",
+    "components",
+    "client",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "rc-slider": "^10.0.0"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

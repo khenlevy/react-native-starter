@@ -1,0 +1,32 @@
+{
+  "name": "@buydy/app-db",
+  "version": "1.0.0",
+  "description": "MongoDB database service with automated backups",
+  "type": "module",
+  "scripts": {
+    "release": "node release.js",
+    "restore": "ssh root@kl_droplet 'cd /opt/app-db && export MONGO_USERNAME=\"${MONGO_USERNAME}\" && export MONGO_PASSWORD=\"${MONGO_PASSWORD}\" && ./scripts/restore_mongo_robust.sh'",
+    "restore:list": "ssh root@kl_droplet 'cd /opt/app-db && ./scripts/restore_mongo_robust.sh --list'",
+    "restore:verify": "ssh root@kl_droplet 'cd /opt/app-db && export MONGO_USERNAME=\"${MONGO_USERNAME}\" && export MONGO_PASSWORD=\"${MONGO_PASSWORD}\" && ./scripts/restore_mongo_robust.sh --verify'",
+    "backup": "ssh root@kl_droplet 'cd /opt/app-db && export MONGO_USERNAME=\"${MONGO_USERNAME}\" && export MONGO_PASSWORD=\"${MONGO_PASSWORD}\" && ./scripts/backup_mongo.sh'",
+    "admin:ensure": "ssh root@kl_droplet 'cd /opt/app-db && ./scripts/ensure_admin_user.sh'",
+    "init:auth": "ssh root@kl_droplet 'cd /opt/app-db && ./scripts/init_mongo_with_auth.sh'",
+    "access:enable": "ssh root@kl_droplet 'cd /opt/app-db && ./scripts/configure-mongo-access.sh'",
+    "access:secure": "ssh root@kl_droplet 'cd /opt/app-db && ./scripts/secure-mongo-access.sh'",
+    "indexes:create": "node ../../scripts/create-optimal-indexes.js",
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "mongodb",
+    "database",
+    "mongo",
+    "backup",
+    "infrastructure"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@buydy/dv-cd": "workspace:*",
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

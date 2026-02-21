@@ -1,0 +1,33 @@
+{
+  "name": "@buydy/cl-http-priority-queue-client",
+  "version": "1.0.0",
+  "description": "Advanced HTTP client with priority queue, localStorage caching, request deduplication, and retry logic for browser applications",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "http-client",
+    "priority-queue",
+    "axios",
+    "request-queue",
+    "caching",
+    "localStorage",
+    "retry",
+    "deduplication",
+    "browser"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "dependencies": {
+    "@buydy/dv-async-priority-queue": "workspace:*",
+    "@buydy/iso-http-client": "workspace:*"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

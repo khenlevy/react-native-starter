@@ -1,0 +1,28 @@
+{
+  "name": "@buydy/cl-checkbox-list",
+  "version": "1.0.0",
+  "description": "Checkbox list component with search for Buydy web applications",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "checkbox",
+    "list",
+    "components",
+    "client",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

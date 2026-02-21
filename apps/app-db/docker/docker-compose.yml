@@ -1,0 +1,36 @@
+services:
+  mongo:
+    image: mongo:8.0
+    container_name: mongo
+    restart: unless-stopped
+    # Enforce authentication at runtime; admin user is provisioned by init script
+    command: ['--auth', '--wiredTigerCacheSizeGB', '0.25']
+    networks:
+      - buydy-network
+    env_file:
+      - .env.production
+    # Note: MONGO_* variables loaded from .env.production via env_file
+    # MONGO_INITDB_* variables passed through for first-boot admin user creation
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    # Bind to localhost only; access via SSH tunnel from outside
+    ports:
+      - '127.0.0.1:27017:27017'
+    volumes:
+      - docker_mongo_data:/data/db
+      - /var/backups/mongo:/var/backups/mongo:ro
+    deploy:
+      resources:
+        limits:
+          memory: 768m
+        reservations:
+          memory: 384m
+
+networks:
+  buydy-network:
+    external: true
+
+volumes:
+  docker_mongo_data:
+    name: buydy_mongo_data

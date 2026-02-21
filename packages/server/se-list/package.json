@@ -1,0 +1,26 @@
+{
+  "name": "@buydy/se-list",
+  "version": "1.0.0",
+  "description": "Cycled Linked List Manager - Singleton for endless async function execution with smart controls",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/comprehensive-fast-tests.js",
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "dependencies": {
+    "@buydy/se-logger": "workspace:*"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  },
+  "keywords": [
+    "cycled",
+    "linked-list",
+    "singleton",
+    "async-function-execution",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT"
+}

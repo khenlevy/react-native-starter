@@ -1,0 +1,28 @@
+{
+  "name": "@buydy/dv-async-priority-queue",
+  "version": "1.0.0",
+  "description": "Async queue manager with concurrency control and optional priority support",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "async",
+    "queue",
+    "priority-queue",
+    "concurrency",
+    "rate-limiting",
+    "task-queue",
+    "isomorphic"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

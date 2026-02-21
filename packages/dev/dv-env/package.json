@@ -1,0 +1,28 @@
+{
+  "name": "@buydy/dv-env",
+  "version": "1.0.0",
+  "description": "Environment validation and management for Buydy monorepo",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "dv-env-validate": "./bin/dv-env-validate.js"
+  },
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "dev",
+    "tools",
+    "environment",
+    "validation",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "dependencies": {
+    "@buydy/dv-monorepo": "workspace:*"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

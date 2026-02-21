@@ -1,0 +1,38 @@
+{
+  "name": "@buydy/iso-business-types",
+  "version": "1.0.0",
+  "description": "Centralized business type definitions for Buydy stocks system - job types and API endpoint types",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./jobTypes": "./src/jobTypes.json",
+    "./endpointTypes": "./src/endpointTypes.json",
+    "./src/metricsUtils.js": "./src/metricsUtils.js"
+  },
+  "files": [
+    "src/"
+  ],
+  "scripts": {
+    "test": "node --test src/test.js",
+    "lint": "eslint src/",
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "jobs",
+    "scheduling",
+    "stocks",
+    "cron",
+    "business-logic",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*",
+    "eslint": "^8.55.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

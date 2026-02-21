@@ -1,0 +1,46 @@
+{
+  "name": "@buydy/app-stocks-web",
+  "version": "1.0.0",
+  "description": "Stocks Web Dashboard - Job Visualization UI with React",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "prettier-lint": "dv-prettier-lint-runner",
+    "release": "ln -sf ../../.env.production .env && yarn workspace @buydy/dv-cd deploy release --cwd $(pwd)",
+    "release-rollback": "ln -sf ../../.env.production .env && yarn workspace @buydy/dv-cd deploy rollback --cwd $(pwd)"
+  },
+  "dependencies": {
+    "@buydy/cl-button": "workspace:*",
+    "@buydy/cl-checkbox-list": "workspace:*",
+    "@buydy/cl-http-priority-queue-client": "workspace:*",
+    "@buydy/cl-select": "workspace:*",
+    "@buydy/cl-slider": "workspace:*",
+    "@buydy/cl-table": "workspace:*",
+    "apexcharts": "^4.0.0",
+    "flatpickr": "^4.6.13",
+    "lucide-react": "^0.294.0",
+    "react": "^18.2.0",
+    "react-apexcharts": "^1.7.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "react-select": "^5.10.2",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "vite": "^5.4.11"
+  }
+}

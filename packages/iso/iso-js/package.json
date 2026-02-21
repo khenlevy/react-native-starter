@@ -1,0 +1,18 @@
+{
+  "name": "@buydy/iso-js",
+  "version": "1.0.0",
+  "description": "Isomorphic JavaScript utility functions",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "utilities",
+    "javascript",
+    "isomorphic",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT"
+}

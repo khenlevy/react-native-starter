@@ -1,0 +1,26 @@
+{
+  "name": "@buydy/dv-disk",
+  "version": "1.0.0",
+  "description": "Disk operations utilities for Buydy development tools - file sync, disk management, and cleanup operations",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "prettier-lint": "dv-prettier-lint-runner"
+  },
+  "keywords": [
+    "dev",
+    "tools",
+    "rsync",
+    "sync",
+    "file",
+    "disk",
+    "cleanup",
+    "maintenance",
+    "buydy"
+  ],
+  "author": "Buydy Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:*"
+  }
+}

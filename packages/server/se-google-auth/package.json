@@ -1,0 +1,35 @@
+{
+  "name": "@buydy/se-google-auth",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "echo 'This is a library package - no dev server'",
+    "start": "echo 'This is a library package - no start server'",
+    "lint": "eslint src --ext .js",
+    "lint:fix": "eslint src --ext .js --fix",
+    "prettier-lint": "dv-prettier-lint-runner",
+    "prettier-lint:fix": "dv-prettier-lint-runner --write",
+    "test": "echo 'No tests yet'",
+    "test:watch": "echo 'No tests yet'",
+    "test:coverage": "echo 'No tests yet'"
+  },
+  "dependencies": {
+    "@buydy/iso-auth-utils": "workspace:*",
+    "@buydy/se-db": "workspace:*",
+    "axios": "^1.6.0",
+    "google-auth-library": "^9.0.0"
+  },
+  "devDependencies": {
+    "@buydy/dv-prettier-lint": "workspace:^",
+    "eslint": "^8.57.0"
+  },
+  "peerDependencies": {
+    "express": "^4.19.2"
+  }
+}
