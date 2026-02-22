@@ -1,5 +1,12 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+**Monorepo note:** This app lives in a Yarn 4 workspace. Run all `yarn` commands from the **repository root**, not from this directory. Use:
+
+- From root: `yarn mobile:lint`, `yarn mobile:start`, `yarn mobile:test`
+- Or: `yarn workspace app-mobile run <script>`
+
+Running `yarn` inside `apps/app-mobile` will fail with a lockfile error.
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
